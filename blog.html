@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="background-color:lightgreen;margin-top:50px;margin-bottom:50px;font-family:times;">
+
+<!-- Made by Julian H. -->
+<head>
+	<title>Jeweled</title>
+</head>
+<style>
+
+	@keyframes h {
+		0% {transform:rotate(0deg);}
+		20% {transform:rotate(10deg);}
+		
+		100% {to transform:rotate(5deg);}
+	
+	}
+	
+	html {
+		background-image:url("resources/bgtile.png");
+	}
+
+	.entry {
+		background-color:#bababa;
+		padding:10px;
+		border-style:solid;
+		border-color:#999999;
+	}
+	
+	.date {
+		color:purple;
+	}
+</style>
+<body>
+
+	<div style="display:block;margin-left:auto;margin-right:auto;width:50%;background-color:lightgray;border-style:outset;padding:15px;">
+	
+		<img src="resources/header.png" id="himg" onclick="wow()" style="width:45%;animation-name:;
+  		animation-duration: 1s;">
+
+		<br><br><div style="display:block;margin-left:auto;margin-right:auto;width:;text-align:center;">
+			
+			<a href="index.html" style="color:blue;margin-left:20px;margin-right:20px;">Home</a>
+			<a href="blog.html" style="color:blue;margin-left:20px;margin-right:20px;">Blog</a>
+			<a href="products.html" style="color:blue;margin-left:20px;margin-right:20px;">Products</a>
+			<a href="about.html" style="color:blue;margin-left:20px;margin-right:20px;">About</a>
+
+		</div>
+		<hr>
+		<h3>Julian's Blog</h3>
+		<p>Welcome to my blog!</p>
+		<div id="entries" style="border-style:inset;">
+
+			<div class="entry" style="display:none;margin:15px;">
+				<h3 class="title" title="Post title">...</h3>
+				<i class="date" title="Date posted">...</i>
+				<p class="body" style="overflow-wrap: break-word;">...</p>	
+				<p style="color:blue;cursor:pointer;" title="See more">See more ↓</p>	
+
+			</div>
+
+		</div>
+
+		<p style="text-align:center;font-size:12;margin-top:40px;"><b>Copyright © Julian H. 2021. All rights reserved.</b></p>
+	</div>
+
+</body>
+
+<script>
+	console.log("content script running on " + window.location.href)
+	var headimgrunning = false;
+	function wow() {
+		if (headimgrunning == false) {
+			headimgrunning = true;
+			document.getElementById("himg").style.animationName = "h"
+			setTimeout(function(){document.getElementById("himg").style.animationName = "";headimgrunning = false;}, 1500)
+		}	
+	}
+</script>
+<script src="resources/posts.js"></script>
+</html>
+
